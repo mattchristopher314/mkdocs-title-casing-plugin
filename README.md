@@ -26,3 +26,20 @@ plugins:
 ## Usage
 
 When the plugin is enabled, all section and page titles will be converted to use Title Case. For example, `War and peace` becomes `War and Peace`.
+
+### Configuration
+
+* `capitalization_type` (string)
+  * `title` - default - gives `War and Peace`.
+  * `first_letter` - gives `War And Peace`.
+* `default_page_name` (string). The page name to use when it cannot be determined automatically. Default is `Home`.
+
+#### Example mkdocs.yml
+
+```yml
+plugins:
+  - search
+  - title-casing:
+      capitalization_type: first_letter
+      default_page_name: Index
+```
