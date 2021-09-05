@@ -1,0 +1,21 @@
+name: ci
+on:
+  release:
+    types: [created]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to PyPI
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python environment
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+    - name: Build
+      run: python setup.py sdist bdist_wheel
+    - name: Publish
+      env:
+        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+      run: twine upload dist/*

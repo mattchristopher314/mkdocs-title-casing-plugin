@@ -12,7 +12,7 @@ setup(
     keywords="mkdocs title case casing plugin",
     url="https://github.com/Rusty3141/mkdocs-title-casing-plugin",
     author="Rusty3141",
-    version="0.1.0",
+    version="0.1.1",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
