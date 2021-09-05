@@ -18,7 +18,7 @@ Include the plugin in `mkdocs.yml`. For example:
 ```yml
 plugins:
   - search
-  - git-authors
+  - title-casing
 ```
 
 > If this is the first `plugins` entry that you are adding, you should probably also add `search` as this is enabled by default.
